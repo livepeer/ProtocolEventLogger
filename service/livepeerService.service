@@ -1,0 +1,14 @@
+[Unit]
+Description=livepeerService.js - making your environment variables rad
+Documentation=https://github.com/livepeer
+After=network.target
+
+[Service]
+Environment=NODE_PORT=3001
+Type=simple
+User=livepeerServiceUser
+ExecStart=/usr/bin/env node livepeerServiceDir
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
