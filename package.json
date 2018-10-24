@@ -1,0 +1,26 @@
+{
+  "name": "livepeer-event-loader",
+  "preferGlobal": true,
+  "bin": "./index.js",
+  "version": "1.0.0",
+  "description": "Livepeer protocol event loader",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js --help",
+    "currentblock": "node index.js currentblock",
+    "load": "node index.js load",
+    "stopservice": "node index.js stopservice"
+  },
+  "author": "heychessy",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "ethjs": "^0.4.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.3",
+    "node-cmd": "^3.0.0",
+    "replace-in-file": "^3.4.2",
+    "web3": "^1.0.0-beta.36",
+    "websocket": "1.0.28"
+  }
+}

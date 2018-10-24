@@ -1,0 +1,64 @@
+contract IBondingManager - https://github.com/livepeer/protocol/blob/master/contracts/bonding/IBondingManager.sol
+  event TranscoderUpdate(address indexed transcoder, uint256 pendingRewardCut, uint256 pendingFeeShare, uint256 pendingPricePerSegment, bool registered);
+  event TranscoderEvicted(address indexed transcoder);
+  event TranscoderResigned(address indexed transcoder);
+  event TranscoderSlashed(address indexed transcoder, address finder, uint256 penalty, uint256 finderReward);
+  event Reward(address indexed transcoder, uint256 amount);
+  event Bond(address indexed newDelegate, address indexed oldDelegate, address indexed delegator, uint256 additionalAmount, uint256 bondedAmount);
+  event Unbond(address indexed delegate, address indexed delegator, uint256 unbondingLockId, uint256 amount, uint256 withdrawRound);
+  event Rebond(address indexed delegate, address indexed delegator, uint256 unbondingLockId, uint256 amount);
+  event WithdrawStake(address indexed delegator, uint256 unbondingLockId, uint256 amount, uint256 withdrawRound);
+  event WithdrawFees(address indexed delegator);
+
+contract IJobsManager { https://github.com/livepeer/protocol/tree/master/contracts/jobs
+ event Deposit(address indexed broadcaster, uint256 amount);
+    event Withdraw(address indexed broadcaster);
+    event NewJob(address indexed broadcaster, uint256 jobId, string streamId, string transcodingOptions, uint256 maxPricePerSegment, uint256 creationBlock);
+    event NewClaim(address indexed transcoder, uint256 indexed jobId, uint256 claimId);
+    event Verify(address indexed transcoder, uint256 indexed jobId, uint256 indexed claimId, uint256 segmentNumber);
+    event DistributeFees(address indexed transcoderd, uint256 indexed jobId, uint256 indexed claimId, uint256 fees);
+    event PassedVerification(address indexed transcoder, uint256 indexed jobId, uint256 indexed claimId, uint256 segmentNumber);
+    event FailedVerification(address indexed transcoder, uint256 indexed jobId, uint256 indexed claimId, uint256 segmentNumber);
+}
+
+https://github.com/livepeer/protocol/blob/master/contracts/rounds/IRoundsManager.sol
+contract IRoundsManager {
+event NewRound(uint256 round);
+
+
+https://github.com/livepeer/protocol/blob/master/contracts/token/IMinter.sol
+event SetCurrentRewardTokens(uint256 currentMintableTokens, uint256 currentInflation);
+contract IMinter {
+
+https://github.com/livepeer/protocol/blob/master/contracts/token/VariableSupplyToken.sol
+contract VariableSupplyToken is MintableToken {
+event Burn(address indexed burner, uint256 value);
+
+
+https://github.com/livepeer/protocol/blob/master/contracts/token/MerkleMine.sol
+contract MerkleMine {
+event Generate(address indexed _recipient, address indexed _caller, uint256 _recipientTokenAmount, uint256 _callerTokenAmount, uint256 _block);
+
+
+
+https://github.com/livepeer/protocol/blob/master/contracts/token/LivepeerTokenFaucet.sol
+
+ event Request(address indexed to, uint256 amount);
+
+https://github.com/livepeer/protocol/blob/master/contracts/verification/LivepeerVerifier.sol
+event VerifyRequest( uint256 indexed requestId, uint256 indexed jobId, uint256 indexed claimId, uint256 segmentNumber,
+        string transcodingOptions, string dataStorageHash, bytes32 dataHash,bytes32 transcodedDataHash );
+
+event Callback(uint256 indexed requestId, uint256 indexed jobId, uint256 indexed claimId, uint256 segmentNumber, bool result);
+event SolverUpdate(address solver);
+
+contract IManager { -https://github.com/livepeer/protocol/blob/master/contracts/IManager.sol
+    event SetController(address controller);
+event ParameterUpdate(string param);
+
+
+
+contract ServiceRegistry is ManagerProxyTarget { -https://github.com/livepeer/protocol/blob/master/contracts/ServiceRegistry.sol
+
+ // Event fired when a caller updates its service URI endpoint
+    event ServiceURIUpdate(address indexed addr, string serviceURI);
